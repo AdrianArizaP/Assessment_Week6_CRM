@@ -37,6 +37,11 @@ public class CustomerService {
         return ResponseEntity.ok(customerEntity);
     }
 
-
+    /*
+    CREATE CUSTOMER METHOD
+    */
+    public CustomerEntity createCustomer(CustomerEntity customerEntity){
+        return customerEntity;
+    }
 
 }
