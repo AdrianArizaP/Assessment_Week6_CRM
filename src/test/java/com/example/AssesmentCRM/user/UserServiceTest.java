@@ -1,7 +1,7 @@
 package com.example.AssesmentCRM.user;
 
 import com.example.AssesmentCRM.models.UserEntity;
-import com.example.AssesmentCRM.contact.UserService;
+import com.example.AssesmentCRM.services.UserService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

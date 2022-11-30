@@ -1,4 +1,4 @@
-package com.example.AssesmentCRM.contact;
+package com.example.AssesmentCRM.services;
 
 import com.example.AssesmentCRM.models.UserEntity;
 import com.example.AssesmentCRM.exception.ResourceNotFoundException;
@@ -13,25 +13,37 @@ import java.util.List;
 @Service
 public class UserService {
 
+    /*
+    VARIABLES
+    */
     @Autowired
     public UserRepository userRepository;
 
     /*
-      GET ALL USERS METHOD
-      */
+    GET ALL USERS METHOD
+    */
     public List<UserEntity> getAllUsers() {
         return userRepository.findAll();
     }
 
+    /*
+    CREATE USER METHOD
+    */
     public UserEntity createUser(UserEntity userEntity) {
         return userRepository.save(userEntity);
     }
 
+    /*
+    GET USER BY ID METHOD
+    */
     public ResponseEntity<UserEntity> getUserById(long id_user) {
         UserEntity userEntity = userRepository.findById(id_user).orElseThrow(() -> new ResourceNotFoundException("User not exist with id: " + id_user));
         return ResponseEntity.ok(userEntity);
     }
 
+    /*
+    UPDATE USER BY ID METHOD
+    */
     public ResponseEntity<UserEntity> updateUser(long id_user, UserEntity userDetails) {
         UserEntity updateUser = userRepository.findById(id_user).orElseThrow(() -> new ResourceNotFoundException("User not exist with id: " + id_user));
 
@@ -44,6 +56,9 @@ public class UserService {
         return ResponseEntity.ok(updateUser);
     }
 
+    /*
+    DELETE USER BY ID METHOD
+    */
     public ResponseEntity<UserEntity> deleteUser(long id_user) {
         UserEntity deleteUser = userRepository.findById(id_user).orElseThrow(() -> new ResourceNotFoundException("User not exist with id: " + id_user));
 

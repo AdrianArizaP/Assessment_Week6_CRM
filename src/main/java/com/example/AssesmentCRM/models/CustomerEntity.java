@@ -8,7 +8,9 @@ import java.util.List;
 @Table(name = "customer")
 public class CustomerEntity {
 
-    // VARIABLES
+    /*
+    VARIABLES
+    */
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id_customer")
@@ -23,12 +25,18 @@ public class CustomerEntity {
     @OneToMany(mappedBy = "customer_entity", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OpportunityEntity> opportunities;
 
-    // CONSTRUCTORS
-        // EMPTY
+    /*
+    CONSTRUCTOR
+    */
+        /*
+        NO ARGUMENTS
+        */
         public CustomerEntity() {
         }
 
-        // FULL
+        /*
+        FULL ARGUMENTS
+        */
         public CustomerEntity(long idCustomer, String customerName, String customerPhone, String customerEmail, List<OpportunityEntity> opportunities) {
             this.idCustomer = idCustomer;
             this.customerName = customerName;
@@ -37,7 +45,9 @@ public class CustomerEntity {
             this.opportunities = opportunities;
         }
 
-    // GETTERS AND SETTERS
+    /*
+    GETTERS AND SETTERS
+    */
     public long getIdCustomer() {
         return idCustomer;
     }
@@ -79,7 +89,9 @@ public class CustomerEntity {
     }
 
 
-    // TO STRING
+    /*
+    TO STRING
+    */
     @Override
     public String toString() {
         return "CustomerEntity{" +

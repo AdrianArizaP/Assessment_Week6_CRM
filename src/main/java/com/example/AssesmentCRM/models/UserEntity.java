@@ -9,7 +9,9 @@ import javax.persistence.*;
 @Table(name = "user")
 public class UserEntity {
 
-    // VARIABLES
+    /*
+    VARIABLES
+    */
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id_user", length = 20)
@@ -23,13 +25,19 @@ public class UserEntity {
     @Column(name = "email", unique = true, length = 60)
     private String email;
 
-    //CONSTRUCTORS
-        //EMPTY
+    /*
+    CONSTRUCTOR
+    */
+        /*
+        NO ARGUMENTS
+        */
         public UserEntity() {
 
         }
 
-        // FULL
+        /*
+        FULL ARGUMENTS
+        */
         public UserEntity(Long idUser, String username, String password, String email) {
             this.idUser = idUser;
             this.username = username;
@@ -38,7 +46,9 @@ public class UserEntity {
         }
 
 
-    //GETTERS AND SETTERS
+    /*
+    GETTERS AND SETTERS
+    */
     public long getIdUser() {
         return idUser;
     }
@@ -71,7 +81,9 @@ public class UserEntity {
         this.email = email;
     }
 
-    //TO STRING
+    /*
+    TO STRING
+    */
     @Override
     public String toString() {
         return "UserEntity{" +

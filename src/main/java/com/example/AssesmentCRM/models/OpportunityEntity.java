@@ -9,7 +9,9 @@ import java.util.List;
 @Table(name = "opportunity")
 public class OpportunityEntity {
 
-    // VARIABLES
+    /*
+    VARIABLES
+    */
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id_opportunity")
@@ -29,12 +31,18 @@ public class OpportunityEntity {
     private CustomerEntity customer_entity;
 
 
-    // CONSTRUCTORS
-        // EMPTY
+    /*
+    CONSTRUCTOR
+    */
+        /*
+        NO ARGUMENTS
+        */
         public OpportunityEntity() {
         }
 
-        // FULL
+        /*
+        ALL ARGUMENTS
+        */
         public OpportunityEntity(long idOpportunity, String opportunityName, String opportunityPhone, String opportunityEmail, List<ContactEntity> contacts, CustomerEntity customer_entity) {
             this.idOpportunity = idOpportunity;
             this.opportunityName = opportunityName;
@@ -45,7 +53,9 @@ public class OpportunityEntity {
         }
 
 
-    // GETTERS AND SETTERS
+    /*
+    GETTERS AND SETTERS
+    */
     public long getIdOpportunity() {
         return idOpportunity;
     }
@@ -94,7 +104,9 @@ public class OpportunityEntity {
         this.customer_entity = customer_entity;
     }
 
-    //TO STRING
+    /*
+    TO STRING
+    */
     @Override
     public String toString() {
         return "OpportunityEntity{" +

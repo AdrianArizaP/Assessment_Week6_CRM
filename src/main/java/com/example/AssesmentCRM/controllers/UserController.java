@@ -2,7 +2,7 @@ package com.example.AssesmentCRM.controllers;
 
 
 import com.example.AssesmentCRM.models.UserEntity;
-import com.example.AssesmentCRM.contact.UserService;
+import com.example.AssesmentCRM.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +14,9 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
+    /*
+    VARIABLES
+    */
     @Autowired
     private UserService userService;
 
@@ -26,23 +29,32 @@ public class UserController {
     }
 
     /*
-      CREATE USER METHOD
+    CREATE USER METHOD
     */
     @PostMapping
     public UserEntity createUser(@RequestBody UserEntity userEntity) {
         return userService.createUser(userEntity);
     }
 
+    /*
+    GET USER BY ID METHOD
+    */
     @GetMapping("{id_user}")
     public ResponseEntity<UserEntity> getUserById(@PathVariable long id_user) {
         return userService.getUserById(id_user);
     }
 
+    /*
+    UPDATE USER BY ID METHOD
+    */
     @PutMapping("{id_user}")
     public ResponseEntity<UserEntity> updateUser(@PathVariable long id_user, @RequestBody UserEntity userDetails) {
         return userService.updateUser(id_user, userDetails);
     }
 
+    /*
+    DELETE USER BY ID METHOD
+    */
     @DeleteMapping("{id_user}")
     public ResponseEntity<UserEntity> deleteUser(@PathVariable long id_user) {
         return userService.deleteUser(id_user);

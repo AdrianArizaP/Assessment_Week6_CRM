@@ -1,20 +1,24 @@
 package com.example.AssesmentCRM.models;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
 @Table(name = "contact")
 public class ContactEntity {
 
-    // VARIABLES
+    /*
+    VARIABLES
+    */
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id_contact")
     private long idContact;
-    @Column(name="contact_date", nullable = false)
-    private Date contactDate;
-    @Column(name="contact_description", nullable = false, length = 200)
+    @Column(name="contact_date")
+    private LocalDateTime contactDate;
+    @Column(name="contact_description", length = 200)
     private String contactDescription;
 
     @ManyToOne
@@ -23,20 +27,28 @@ public class ContactEntity {
 
 
 
-    // CONSTRUCTORS
-        // EMPTY
+    /*
+    CONSTRUCTOR
+    */
+        /*
+        NO ARGUMENTS
+        */
         public ContactEntity() {
         }
 
-        // FULL
-        public ContactEntity(long idContact, Date contactDate, String contactDescription, OpportunityEntity opportunity_entity) {
+        /*
+        ALL ARGUMENTS
+        */
+        public ContactEntity(long idContact, LocalDateTime contactDate, String contactDescription, OpportunityEntity opportunity_entity) {
             this.idContact = idContact;
             this.contactDate = contactDate;
             this.contactDescription = contactDescription;
             this.opportunity_entity = opportunity_entity;
         }
 
-    //GETTERS AND SETTERS
+    /*
+    GETTERS AND SETTERS
+    */
     public long getIdContact() {
         return idContact;
     }
@@ -45,11 +57,11 @@ public class ContactEntity {
         this.idContact = idContact;
     }
 
-    public Date getContactDate() {
+    public LocalDateTime getContactDate() {
         return contactDate;
     }
 
-    public void setContactDate(Date contactDate) {
+    public void setContactDate(LocalDateTime contactDate) {
         this.contactDate = contactDate;
     }
 
@@ -69,7 +81,9 @@ public class ContactEntity {
         this.opportunity_entity = opportunity_entity;
     }
 
-    //TO STRING
+    /*
+    TO STRING
+    */
     @Override
     public String toString() {
         return "ContactEntity{" +
