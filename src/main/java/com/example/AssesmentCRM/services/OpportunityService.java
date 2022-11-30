@@ -3,6 +3,7 @@ package com.example.AssesmentCRM.services;
 import com.example.AssesmentCRM.exception.ResourceNotFoundException;
 import com.example.AssesmentCRM.models.CustomerEntity;
 import com.example.AssesmentCRM.models.OpportunityEntity;
+import com.example.AssesmentCRM.models.UserEntity;
 import com.example.AssesmentCRM.repositories.OpportunityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -39,7 +40,7 @@ public class OpportunityService {
     CREATE OPPORTUNITY METHOD
     */
     public OpportunityEntity createOpportunity(OpportunityEntity opportunityEntity){
-        return opportunityEntity;
+        return opportunityRepository.save(opportunityEntity);
     }
 
 

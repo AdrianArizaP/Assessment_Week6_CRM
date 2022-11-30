@@ -1,5 +1,6 @@
 package com.example.AssesmentCRM.opportunity;
 
+import com.example.AssesmentCRM.models.ContactEntity;
 import com.example.AssesmentCRM.models.OpportunityEntity;
 import com.example.AssesmentCRM.models.UserEntity;
 import com.example.AssesmentCRM.services.ContactService;
@@ -12,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDateTime;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class OpportunityServiceTest {
@@ -22,6 +25,16 @@ public class OpportunityServiceTest {
 
     OpportunityEntity opportunity1;
 
+
+    @Before
+    public void setUp() {
+        opportunity1 =new OpportunityEntity();
+        opportunity1.setOpportunityName("Adrian");
+        opportunity1.setOpportunityPhone("+34 675 786 435");
+        opportunity1.setOpportunityEmail("adrian@solera.com");
+        opportunity1.setContacts(opportunity1.getContacts());
+
+    }
 
     /*
     TEST CREATE OPPORTUNITY
