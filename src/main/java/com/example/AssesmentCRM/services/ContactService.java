@@ -39,8 +39,8 @@ public class ContactService {
     /*
     CREATE CONTACT METHOD
     */
-    public boolean createContact(ContactEntity contactEntity){
-        return false;
+    public ContactEntity createContact(ContactEntity contactEntity) {
+        return contactRepository.save(contactEntity);
     }
 
 }
