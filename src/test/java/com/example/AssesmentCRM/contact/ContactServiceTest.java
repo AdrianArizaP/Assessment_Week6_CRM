@@ -34,7 +34,6 @@ public class ContactServiceTest {
     }
 
 
-
     @Test
     public void createContact() {
         Integer numberContact = this.contactService.getAllContacts().size();

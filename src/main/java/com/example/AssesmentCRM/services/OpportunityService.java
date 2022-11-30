@@ -35,8 +35,12 @@ public class OpportunityService {
         return ResponseEntity.ok(opportunityEntity);
     }
 
-
-
+    /*
+    CREATE OPPORTUNITY METHOD
+    */
+    public OpportunityEntity createOpportunity(OpportunityEntity opportunityEntity){
+        return opportunityEntity;
+    }
 
 
 
