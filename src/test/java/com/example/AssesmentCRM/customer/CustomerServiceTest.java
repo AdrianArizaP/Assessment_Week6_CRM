@@ -16,12 +16,18 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class CustomerServiceTest {
 
+    /*
+    VARIABLES
+    */
     @Autowired
     private CustomerService customerService;
 
 
     CustomerEntity customer1;
 
+    /*
+    SETTERS OF ENTITY
+    */
     @Before
     public void setUp(){
         customer1 = new CustomerEntity();

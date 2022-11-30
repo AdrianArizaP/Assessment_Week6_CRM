@@ -5,6 +5,7 @@ import com.example.AssesmentCRM.models.ContactEntity;
 import com.example.AssesmentCRM.models.UserEntity;
 import com.example.AssesmentCRM.repositories.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -43,4 +44,11 @@ public class ContactService {
         return contactRepository.save(contactEntity);
     }
 
+    /*
+    DELETE CONTACT BY ID METHOD
+    */
+    public ResponseEntity<ContactEntity> deleteContact(long id_contact) {
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

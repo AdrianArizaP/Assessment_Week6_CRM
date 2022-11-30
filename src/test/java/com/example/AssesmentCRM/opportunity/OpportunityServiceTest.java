@@ -19,13 +19,18 @@ import java.time.LocalDateTime;
 @SpringBootTest
 public class OpportunityServiceTest {
 
+    /*
+    VARIABLES
+    */
     @Autowired
     private OpportunityService opportunityService;
 
 
     OpportunityEntity opportunity1;
 
-
+    /*
+    SETTERS OF ENTITY
+    */
     @Before
     public void setUp() {
         opportunity1 =new OpportunityEntity();

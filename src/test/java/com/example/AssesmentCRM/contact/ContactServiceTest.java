@@ -19,11 +19,17 @@ import java.time.LocalDateTime;
 @SpringBootTest
 public class ContactServiceTest {
 
+    /*
+    VARIABLES
+    */
     @Autowired
     private ContactService contactService;
 
     ContactEntity contact1;
 
+    /*
+    SETTERS OF ENTITY
+    */
     @Before
     public void setUp() {
         contact1 =new ContactEntity();
@@ -31,13 +37,27 @@ public class ContactServiceTest {
         contact1.setContactDescription("Web relacionada en Ecommerce con urgencias.");
         contact1.setOpportunity_entity(contact1.getOpportunity_entity());
 
+        contact1.setIdContact(2);
+
     }
 
-
+    /*
+    TEST CREATE CONTACT
+    */
     @Test
     public void createContact() {
         Integer numberContact = this.contactService.getAllContacts().size();
         this.contactService.createContact(contact1);
         Assert.assertEquals(this.contactService.getAllContacts().size(), numberContact + 1);
+    }
+
+    /*
+    TEST DELETE CONTACT
+    */
+    @Test
+    public void deleteContact() {
+        Integer numberContact = this.contactService.getAllContacts().size();
+        this.contactService.deleteContact(contact1.getIdContact());
+        Assert.assertEquals(this.contactService.getAllContacts().size(), numberContact - 1);
     }
 }
