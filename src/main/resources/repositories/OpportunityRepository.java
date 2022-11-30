@@ -1,6 +1,6 @@
-package com.example.AssesmentCRM.repositories;
+package repositories;
 
-import com.example.AssesmentCRM.entities.OpportunityEntity;
+import com.example.AssesmentCRM.models.OpportunityEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

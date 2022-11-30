@@ -1,6 +1,6 @@
 package com.example.AssesmentCRM;
 
-import com.example.AssesmentCRM.entities.UserEntity;
+import com.example.AssesmentCRM.models.UserEntity;
 import com.example.AssesmentCRM.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

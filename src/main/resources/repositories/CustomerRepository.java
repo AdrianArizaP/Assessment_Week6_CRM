@@ -1,6 +1,6 @@
-package com.example.AssesmentCRM.repositories;
+package repositories;
 
-import com.example.AssesmentCRM.entities.CustomerEntity;
+import com.example.AssesmentCRM.models.CustomerEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

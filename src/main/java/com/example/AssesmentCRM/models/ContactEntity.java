@@ -1,6 +1,4 @@
-package com.example.AssesmentCRM.entities;
-
-import org.hibernate.annotations.CacheConcurrencyStrategy;
+package com.example.AssesmentCRM.models;
 
 import javax.persistence.*;
 import java.util.Date;

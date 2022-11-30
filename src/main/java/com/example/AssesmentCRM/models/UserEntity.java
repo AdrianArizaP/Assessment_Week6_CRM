@@ -1,8 +1,6 @@
-package com.example.AssesmentCRM.entities;
+package com.example.AssesmentCRM.models;
 
 
-
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
@@ -21,7 +19,8 @@ public class UserEntity {
     @Column(name = "password", length = 45)
     private String password;
 
-    @Column(name = "email",  length = 60)
+
+    @Column(name = "email", unique = true, length = 60)
     private String email;
 
     //CONSTRUCTORS
@@ -31,18 +30,13 @@ public class UserEntity {
         }
 
         // FULL
-        public UserEntity(long idUser, String username, String password, String email) {
+        public UserEntity(Long idUser, String username, String password, String email) {
             this.idUser = idUser;
             this.username = username;
             this.password = password;
             this.email = email;
         }
 
-    public UserEntity(String username, String password, String email) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-    }
 
     //GETTERS AND SETTERS
     public long getIdUser() {
