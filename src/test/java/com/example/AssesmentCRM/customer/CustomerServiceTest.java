@@ -22,6 +22,14 @@ public class CustomerServiceTest {
 
     CustomerEntity customer1;
 
+    @Before
+    public void setUp(){
+        customer1 = new CustomerEntity();
+        customer1.setCustomerName("Roberto");
+        customer1.setCustomerPhone("+351 576 34 456");
+        customer1.setCustomerEmail("roberto@solera.com");
+        customer1.setOpportunities(customer1.getOpportunities());
+    }
 
     /*
     TEST CREATE CUSTOMER

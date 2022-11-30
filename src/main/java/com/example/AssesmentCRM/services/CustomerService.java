@@ -41,7 +41,7 @@ public class CustomerService {
     CREATE CUSTOMER METHOD
     */
     public CustomerEntity createCustomer(CustomerEntity customerEntity){
-        return customerEntity;
+        return customerRepository.save(customerEntity);
     }
 
 }
