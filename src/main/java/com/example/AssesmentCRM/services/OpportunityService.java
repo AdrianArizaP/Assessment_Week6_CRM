@@ -32,7 +32,7 @@ public class OpportunityService {
     */
     public ResponseEntity<OpportunityEntity> getOpportunityById(long id_opportunity) {
         OpportunityEntity opportunityEntity = opportunityRepository.findById(id_opportunity)
-                .orElseThrow(() -> new ResourceNotFoundException("User not exist with id: " + id_opportunity));
+                .orElseThrow(() -> new ResourceNotFoundException("Opportunity not exist with id: " + id_opportunity));
         return ResponseEntity.ok(opportunityEntity);
     }
 
@@ -44,11 +44,20 @@ public class OpportunityService {
     }
 
     /*
-    UPDATE OPPORTUNITY BY ID METHOD
-    */
+     UPDATE OPPORTUNITY BY ID METHOD
+     */
     public ResponseEntity<OpportunityEntity> updateOpportunity(long id_opportunity, OpportunityEntity opportunityEntity) {
 
-        return ResponseEntity.ok(opportunityEntity);
+        OpportunityEntity updateOpportunity = opportunityRepository.findById(id_opportunity)
+                .orElseThrow(() -> new ResourceNotFoundException("Opportunity not exist with id: " + id_opportunity));
+
+        updateOpportunity.setOpportunityName(opportunityEntity.getOpportunityName());
+        updateOpportunity.setOpportunityPhone(opportunityEntity.getOpportunityPhone());
+        updateOpportunity.setOpportunityEmail(opportunityEntity.getOpportunityEmail());
+
+        opportunityRepository.save(updateOpportunity);
+
+        return ResponseEntity.ok(updateOpportunity);
     }
 
 }

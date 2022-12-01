@@ -33,7 +33,7 @@ public class CustomerService {
     */
     public ResponseEntity<CustomerEntity> getCustomerById(long id_customer) {
         CustomerEntity customerEntity = customerRepository.findById(id_customer)
-                .orElseThrow(() -> new ResourceNotFoundException("User not exist with id: " + id_customer));
+                .orElseThrow(() -> new ResourceNotFoundException("Customer not exist with id: " + id_customer));
         return ResponseEntity.ok(customerEntity);
     }
 

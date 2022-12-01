@@ -57,7 +57,7 @@ public class OpportunityServiceTest {
     */
     @Test
     public void updateOpportunity() {
-        opportunity1.setIdOpportunity(4);
+        opportunity1.setIdOpportunity(3);
         opportunity1.setOpportunityName("TestOpportunity");
         opportunity1.setOpportunityPhone("+34 678 345 543");
         opportunity1.setOpportunityEmail("opportunity@updateTest.com");

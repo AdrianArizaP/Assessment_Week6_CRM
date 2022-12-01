@@ -38,6 +38,12 @@ public class OpportunityController {
         return opportunityService.getOpportunityById(id_opportunity);
     }
 
-
+    /*
+    UPDATE OPPORTUNITY BY ID METHOD
+    */
+    @PutMapping("{id_opportunity}")
+    public ResponseEntity<OpportunityEntity> updateOpportunity(@PathVariable long id_opportunity, @RequestBody OpportunityEntity opportunityEntity) {
+        return opportunityService.updateOpportunity(id_opportunity, opportunityEntity);
+    }
 
 }

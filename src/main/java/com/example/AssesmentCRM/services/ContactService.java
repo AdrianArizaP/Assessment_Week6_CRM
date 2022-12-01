@@ -49,7 +49,7 @@ public class ContactService {
     */
     public ResponseEntity<ContactEntity> deleteContact(long id_contact) {
         ContactEntity deleteContact = contactRepository.findById(id_contact)
-                .orElseThrow(() -> new ResourceNotFoundException("User not exist with id: " + id_contact));
+                .orElseThrow(() -> new ResourceNotFoundException("Contact not exist with id: " + id_contact));
         contactRepository.delete(deleteContact);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
