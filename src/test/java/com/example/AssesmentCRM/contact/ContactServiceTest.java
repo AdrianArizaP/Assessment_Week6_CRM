@@ -1,9 +1,7 @@
 package com.example.AssesmentCRM.contact;
 
 import com.example.AssesmentCRM.models.ContactEntity;
-import com.example.AssesmentCRM.models.UserEntity;
 import com.example.AssesmentCRM.services.ContactService;
-import lombok.extern.log4j.Log4j;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

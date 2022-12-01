@@ -51,7 +51,7 @@ public class CustomerServiceTest {
     */
     @Test
     public void updateCustomer() {
-        customer1.setIdCustomer(3);
+        customer1.setIdCustomer(1);
         customer1.setCustomerName("TestCustomer");
         customer1.setCustomerPhone("+351 657 46 475");
         customer1.setCustomerEmail("customer@updateTest.com");

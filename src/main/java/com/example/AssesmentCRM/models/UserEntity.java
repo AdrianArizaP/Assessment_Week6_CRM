@@ -1,7 +1,5 @@
 package com.example.AssesmentCRM.models;
 
-
-
 import javax.persistence.*;
 
 

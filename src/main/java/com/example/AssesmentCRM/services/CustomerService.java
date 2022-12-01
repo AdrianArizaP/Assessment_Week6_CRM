@@ -48,8 +48,16 @@ public class CustomerService {
      */
     public ResponseEntity<CustomerEntity> updateCustomer(long id_customer, CustomerEntity customerEntity) {
 
+        CustomerEntity updateCustomer = customerRepository.findById(id_customer)
+                .orElseThrow(() -> new ResourceNotFoundException("Customer not exist with id: " + id_customer));
 
-        return ResponseEntity.ok(customerEntity);
+        updateCustomer.setCustomerName(customerEntity.getCustomerName());
+        updateCustomer.setCustomerPhone(customerEntity.getCustomerPhone());
+        updateCustomer.setCustomerEmail(customerEntity.getCustomerEmail());
+
+        customerRepository.save(updateCustomer);
+
+        return ResponseEntity.ok(updateCustomer);
     }
 
 
