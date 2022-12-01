@@ -43,6 +43,12 @@ public class OpportunityService {
         return opportunityRepository.save(opportunityEntity);
     }
 
+    /*
+    UPDATE OPPORTUNITY BY ID METHOD
+    */
+    public ResponseEntity<OpportunityEntity> updateOpportunity(long id_opportunity, OpportunityEntity opportunityEntity) {
 
+        return ResponseEntity.ok(opportunityEntity);
+    }
 
 }

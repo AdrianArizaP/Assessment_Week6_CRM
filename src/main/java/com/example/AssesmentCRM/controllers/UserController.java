@@ -48,8 +48,8 @@ public class UserController {
     UPDATE USER BY ID METHOD
     */
     @PutMapping("{id_user}")
-    public ResponseEntity<UserEntity> updateUser(@PathVariable long id_user, @RequestBody UserEntity userDetails) {
-        return userService.updateUser(id_user, userDetails);
+    public ResponseEntity<UserEntity> updateUser(@PathVariable long id_user, @RequestBody UserEntity userEntity) {
+        return userService.updateUser(id_user, userEntity);
     }
 
     /*

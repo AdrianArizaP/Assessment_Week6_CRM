@@ -2,6 +2,7 @@ package com.example.AssesmentCRM.controllers;
 
 import com.example.AssesmentCRM.models.CustomerEntity;
 import com.example.AssesmentCRM.models.OpportunityEntity;
+import com.example.AssesmentCRM.models.UserEntity;
 import com.example.AssesmentCRM.services.ContactService;
 import com.example.AssesmentCRM.services.OpportunityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,7 @@ public class OpportunityController {
     public ResponseEntity<OpportunityEntity> getOpportunityById(@PathVariable long id_opportunity) {
         return opportunityService.getOpportunityById(id_opportunity);
     }
+
+
 
 }

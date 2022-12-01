@@ -44,12 +44,13 @@ public class UserService {
     /*
     UPDATE USER BY ID METHOD
     */
-    public ResponseEntity<UserEntity> updateUser(long id_user, UserEntity userDetails) {
+    public ResponseEntity<UserEntity> updateUser(long id_user, UserEntity userEntity) {
+
         UserEntity updateUser = userRepository.findById(id_user).orElseThrow(() -> new ResourceNotFoundException("User not exist with id: " + id_user));
 
-        updateUser.setUsername(userDetails.getUsername());
-        updateUser.setPassword(userDetails.getPassword());
-        updateUser.setEmail(userDetails.getEmail());
+        updateUser.setUsername(userEntity.getUsername());
+        updateUser.setPassword(userEntity.getPassword());
+        updateUser.setEmail(userEntity.getEmail());
 
         userRepository.save(updateUser);
 
