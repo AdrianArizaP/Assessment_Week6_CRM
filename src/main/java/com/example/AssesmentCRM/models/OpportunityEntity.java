@@ -21,6 +21,9 @@ public class OpportunityEntity {
     @Column(name="opportunity_email", length = 45)
     private String opportunityEmail;
 
+    @Column(name = "visible", nullable = false)
+    private int visible;
+
     @OneToMany(mappedBy = "opportunity_entity", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ContactEntity> contacts;
 
@@ -41,19 +44,20 @@ public class OpportunityEntity {
         /*
         ALL ARGUMENTS
         */
-        public OpportunityEntity(long idOpportunity, String opportunityName, String opportunityPhone, String opportunityEmail, List<ContactEntity> contacts, CustomerEntity customer_entity) {
-            this.idOpportunity = idOpportunity;
-            this.opportunityName = opportunityName;
-            this.opportunityPhone = opportunityPhone;
-            this.opportunityEmail = opportunityEmail;
-            this.contacts = contacts;
-            this.customer_entity = customer_entity;
-        }
 
+    public OpportunityEntity(long idOpportunity, String opportunityName, String opportunityPhone, String opportunityEmail, List<ContactEntity> contacts, CustomerEntity customer_entity) {
+        this.idOpportunity = idOpportunity;
+        this.opportunityName = opportunityName;
+        this.opportunityPhone = opportunityPhone;
+        this.opportunityEmail = opportunityEmail;
+        this.visible = 1;
+        this.contacts = contacts;
+        this.customer_entity = customer_entity;
+    }
 
     /*
-    GETTERS AND SETTERS
-    */
+            GETTERS AND SETTERS
+            */
     public long getIdOpportunity() {
         return idOpportunity;
     }
@@ -86,6 +90,14 @@ public class OpportunityEntity {
         this.opportunityEmail = opportunityEmail;
     }
 
+    public int getVisible() {
+        return visible;
+    }
+
+    public void setVisible(int visible) {
+        this.visible = visible;
+    }
+
     public List<ContactEntity> getContacts() {
         return contacts;
     }
@@ -112,6 +124,7 @@ public class OpportunityEntity {
                 ", opportunityName='" + opportunityName + '\'' +
                 ", opportunityPhone='" + opportunityPhone + '\'' +
                 ", opportunityEmail='" + opportunityEmail + '\'' +
+                ", visible=" + visible +
                 ", contacts=" + contacts +
                 ", customer_entity=" + customer_entity +
                 '}';

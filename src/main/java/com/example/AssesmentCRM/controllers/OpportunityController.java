@@ -43,4 +43,11 @@ public class OpportunityController {
         return opportunityService.updateOpportunity(id_opportunity, opportunityEntity);
     }
 
+    /*
+    HIDE OPPORTUNITY METHOD
+    */
+
+
+
+
 }

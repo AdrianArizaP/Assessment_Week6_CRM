@@ -1,6 +1,8 @@
 package com.example.AssesmentCRM;
 
+import com.example.AssesmentCRM.models.OpportunityEntity;
 import com.example.AssesmentCRM.models.UserEntity;
+import com.example.AssesmentCRM.repositories.OpportunityRepository;
 import com.example.AssesmentCRM.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -15,17 +17,18 @@ public class AssesmentCrmApplication implements CommandLineRunner {
 	}
 
 	@Autowired
-	private UserRepository userRepository;
+	private OpportunityRepository opportunityRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
-
-		UserEntity user_entity = new UserEntity();
-		user_entity.setUsername("Alberto");
-		user_entity.setPassword("Alberto123");
-		user_entity.setEmail("Alberto@solera.com");
-		userRepository.save(user_entity);
-
+/*
+		OpportunityEntity opportunity_entity = new OpportunityEntity();
+		opportunity_entity.setOpportunityName("Jose Manuel");
+		opportunity_entity.setOpportunityPhone("JoseManuel12!");
+		opportunity_entity.setOpportunityEmail("JoseManuel@solera.com");
+		opportunity_entity.setVisible(1);
+		opportunityRepository.save(opportunity_entity);
+*/
 
 	}
 }

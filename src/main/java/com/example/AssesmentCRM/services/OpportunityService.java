@@ -58,4 +58,16 @@ public class OpportunityService {
         return ResponseEntity.ok(updateOpportunity);
     }
 
+    /*
+     HIDE OPPORTUNITY BY ID METHOD
+     */
+    public OpportunityEntity hideOpportunity(long id_opportunity) {
+
+
+
+        return null;
+    }
+
+
+
 }

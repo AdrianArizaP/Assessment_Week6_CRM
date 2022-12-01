@@ -61,7 +61,8 @@ public class UserService {
     DELETE USER BY ID METHOD
     */
     public ResponseEntity<UserEntity> deleteUser(long id_user) {
-        UserEntity deleteUser = userRepository.findById(id_user).orElseThrow(() -> new ResourceNotFoundException("User not exist with id: " + id_user));
+        UserEntity deleteUser = userRepository.findById(id_user)
+                .orElseThrow(() -> new ResourceNotFoundException("User not exist with id: " + id_user));
 
         userRepository.delete(deleteUser);
 
