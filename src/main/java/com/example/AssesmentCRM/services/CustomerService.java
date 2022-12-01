@@ -1,7 +1,6 @@
 package com.example.AssesmentCRM.services;
 
 import com.example.AssesmentCRM.exception.ResourceNotFoundException;
-import com.example.AssesmentCRM.models.ContactEntity;
 import com.example.AssesmentCRM.models.CustomerEntity;
 import com.example.AssesmentCRM.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +42,15 @@ public class CustomerService {
     public CustomerEntity createCustomer(CustomerEntity customerEntity){
         return customerRepository.save(customerEntity);
     }
+
+    /*
+     UPDATE CUSTOMER BY ID METHOD
+     */
+    public ResponseEntity<CustomerEntity> updateCustomer(long id_customer, CustomerEntity customerEntity) {
+
+
+        return ResponseEntity.ok(customerEntity);
+    }
+
 
 }

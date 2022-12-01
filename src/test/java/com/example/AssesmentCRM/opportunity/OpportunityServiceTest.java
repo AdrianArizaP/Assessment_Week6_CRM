@@ -1,9 +1,7 @@
 package com.example.AssesmentCRM.opportunity;
 
-import com.example.AssesmentCRM.models.ContactEntity;
+
 import com.example.AssesmentCRM.models.OpportunityEntity;
-import com.example.AssesmentCRM.models.UserEntity;
-import com.example.AssesmentCRM.services.ContactService;
 import com.example.AssesmentCRM.services.OpportunityService;
 import org.junit.Assert;
 import org.junit.Before;
