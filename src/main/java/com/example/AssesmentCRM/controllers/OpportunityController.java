@@ -1,6 +1,7 @@
 package com.example.AssesmentCRM.controllers;
 
 import com.example.AssesmentCRM.models.OpportunityEntity;
+import com.example.AssesmentCRM.models.UserEntity;
 import com.example.AssesmentCRM.services.OpportunityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -44,9 +45,12 @@ public class OpportunityController {
     }
 
     /*
-    HIDE OPPORTUNITY METHOD
+    HIDE OPPORTUNITY BY ID METHOD
     */
-
+    @PutMapping("{id_opportunity}")
+    public OpportunityEntity hideOpportunity (@PathVariable long id_opportunity) {
+        return opportunityService.hideOpportunity(id_opportunity);
+    }
 
 
 
